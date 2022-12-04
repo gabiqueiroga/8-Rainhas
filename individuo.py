@@ -4,3 +4,4 @@ class Individuo:
         self.id = None
         self.board = []
         self.generation = None
+        self.fitness = None

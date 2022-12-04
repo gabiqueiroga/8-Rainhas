@@ -16,6 +16,7 @@ while True:
             tam_pop = int(input('Digite o tamanho da populacao: '))
             tx_mut = float(input('Digite o numero da taxa de mutacao: '))
             gen = Genetico(it_max1, tam_pop, tx_mut)
+            gen.alg_genetico()
             opcao1 = int(input('Digite 1 para sair ou qualquer coisa para retornar ao menu principal: '))
             match opcao1:
                 case 1:

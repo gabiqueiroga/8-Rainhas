@@ -54,7 +54,7 @@ class subida:
             for j in range(8):
                 if j == ind.board[i]:
                     continue
-                
+                #precisa fazer
         return melhor
 
     def imprimir_tabuleiro(self, ind):
