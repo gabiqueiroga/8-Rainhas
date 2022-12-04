@@ -60,8 +60,18 @@ class Genetico:
         print(j)
         return fit
 
-    def crossover(self):
-        pass
+    def crossover(self, pai1, pai2):
+        corte = random.randint(1,6)
+        filho1 = Individuo()
+        filho2 = Individuo()
+        filho1.id = self.last_id + 1
+        filho2.id = self.last_id + 1
+        self.last_id = self.last_id + 2
+        filho1.generation - self.generation
+        filho2.generation = self.generation
+        filho1.board = pai1.board[0:corte] + pai2[corte + 1:8]
+        filho2.board = pai2.board[0:corte] + pai1[corte + 1:8]
+        return (filho1, filho2)
 
     def mutacao(self):
         pass
