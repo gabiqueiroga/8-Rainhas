@@ -1,9 +1,10 @@
 from individuo import Individuo
+import random
 
 class subida:
-    def __init__(self, it_max, atual, melhor_sucessor):
+    def __init__(self, it_max):
           self.it_max = it_max
-          self.atual = atual
+          self.atual = Individuo()
 
     def estado_inicial(self):
         """
@@ -42,7 +43,7 @@ class subida:
         e dentre eles calcula qual o que possui o menor número h(x)
         por enquanto incompleta
         """
-        melhor = Individuo
+        melhor = Individuo()
         aux = []
         for i in range(8):
             for j in range(8):
@@ -50,7 +51,7 @@ class subida:
                     continue
         return melhor
 
-    def subida_encosta(self):
+    def subida_encosta(self, it_max):
         """
         funcao principal
         """
@@ -61,4 +62,4 @@ class subida:
             vizinho = self.melhor_sucessor(self.atual)
             if self.aga(vizinho) <= self.aga(self.atual):
                 self.atual = self.vizinho
-        return self.atual
+        return (self.atual, self.aga(self.atual))
