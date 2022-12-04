@@ -15,6 +15,7 @@ while True:
             it_max = int(input('Digite o numero maximo de iteracoes: '))
             tam_pop = int(input('Digite o tamanho da populacao: '))
             tx_mut = float(input('Digite o numero da taxa de mutacao: '))
+            gen = Genetico(it_max, tam_pop, tx_mut)
             opcao1 = int(input('Digite 1 para sair ou qualquer coisa para retornar ao menu principal: '))
             match opcao1:
                 case 1:
@@ -23,9 +24,10 @@ while True:
                     continue
         case 2:
             print('Você escolheu Subida na Encosta')
-            it_max = int(input('Digite o número máximo de iterações: '))
-            subida.subida_encosta
-            opcao1 = int(input('Digite 1 para sair ou qualquer coisa para retornar ao menu principal: '))
+            it_max = int(input('Digite o numero maximo de iteracoes: '))
+            resultado = subida(it_max)
+            resultado.subida_encosta
+            opcao1 = int(input('Digite 1 para sair ou qualquer outro numero para retornar ao menu principal: '))
             match opcao1:
                 case 1:
                     break
