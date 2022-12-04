@@ -1,6 +1,6 @@
 class Individuo:
 
-    def __init__(self, id, board, generation) -> None:
-        self.id = id
-        self.board = board[8]
-        self.generation = generation
+    def __init__(self) -> None:
+        self.id = None
+        self.board = []
+        self.generation = None

@@ -3,7 +3,7 @@ from individuo import Individuo
 
 class Genetico:
 
-    def __init__(self, tam_pop, it_max, tx_mut, generation, last_id):
+    def __init__(self, it_max, tam_pop, tx_mut):
         self.tam_pop = tam_pop
         self.it_max = it_max
         self.tx_mut = tx_mut
@@ -12,9 +12,9 @@ class Genetico:
 
     def random_ind(self, last_id, generation):
         """
-        função que cria um indivíduo aleatório
+        funcao que cria um individuo aleatorio
         o id vai ser gerado a partir do id anterior
-        e a geração será a geração atual 
+        e a geracao sera a geracao atual 
         """
         r_ind = Individuo()
         r_ind.id = self.last_id + 1
@@ -26,7 +26,7 @@ class Genetico:
 
     def gera_populacao(self, tam_pop):
         """
-        função responsável por gerar uma população de uma dada geração e ao final incrementa a geração
+        funcao responsavel por gerar uma populacao de uma dada geracao e ao final incrementa a geracao
         """
         population = []
         ind = Individuo()
@@ -38,9 +38,9 @@ class Genetico:
 
     def fitness(self, individuo):
         """
-        funcao fitness que conta quantos pares de rainhas não estão se atacando
-        variável fit começa com 28, que seria o numero ideal, e para cada par que se ataca
-        o valor de fit é diminuído em 1
+        funcao fitness que conta quantos pares de rainhas nao estao se atacando
+        variavel fit começa com 28, que seria o numero ideal, e para cada par que se ataca
+        o valor de fit é diminuido em 1
         """
         fit = 28
         k = 0
@@ -49,6 +49,8 @@ class Genetico:
             if individuo.board[k] == individuo.board[i]:
                 fit = fit - 1
             if k == i + j:
+                fit = fit - 1
+            if k == i - j:
                 fit = fit - 1
             j = j + 1
             k = k + 1
