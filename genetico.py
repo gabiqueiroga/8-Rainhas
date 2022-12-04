@@ -61,4 +61,9 @@ class Genetico:
 
     def mutacao(self):
         pass
+
+    def add_populacao(self):
+        pass
     
+    def alg_genetico(self):
+        pass
