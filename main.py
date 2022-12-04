@@ -12,10 +12,10 @@ while True:
     match opcao:
         case 1:
             print('Você escolheu Algoritmo Genetico')
-            it_max = int(input('Digite o numero maximo de iteracoes: '))
+            it_max1 = int(input('Digite o numero maximo de iteracoes: '))
             tam_pop = int(input('Digite o tamanho da populacao: '))
             tx_mut = float(input('Digite o numero da taxa de mutacao: '))
-            gen = Genetico(it_max, tam_pop, tx_mut)
+            gen = Genetico(it_max1, tam_pop, tx_mut)
             opcao1 = int(input('Digite 1 para sair ou qualquer coisa para retornar ao menu principal: '))
             match opcao1:
                 case 1:
@@ -24,8 +24,8 @@ while True:
                     continue
         case 2:
             print('Você escolheu Subida na Encosta')
-            it_max = int(input('Digite o numero maximo de iteracoes: '))
-            resultado = subida(it_max)
+            it_max2 = int(input('Digite o numero maximo de iteracoes: '))
+            resultado = subida(it_max2)
             resultado.subida_encosta
             opcao1 = int(input('Digite 1 para sair ou qualquer outro numero para retornar ao menu principal: '))
             match opcao1:
@@ -37,4 +37,3 @@ while True:
             break
         case _:
             print('Desculpa, você não digitou algo correspondente às nossas opções.')
-

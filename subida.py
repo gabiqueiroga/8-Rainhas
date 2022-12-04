@@ -5,14 +5,14 @@ class subida:
     def __init__(self, it_max):
           self.it_max = it_max
           self.atual = Individuo()
+          self.last_id = -1
 
     def estado_inicial(self):
         """
         funcao que gera um estado inicial aleatorio
         """
         r_ind = Individuo()
-        r_ind.id = self.last_id + 1
-        r_ind.generation = self.generation
+        r_ind = self.last_id + 1
         for i in range(8):
             r_ind.board.append(random.randint(0,7))
         self.last_id = r_ind.id
@@ -48,11 +48,13 @@ class subida:
         por enquanto incompleta
         """
         melhor = Individuo()
+        melhor = ind
         aux = []
         for i in range(8):
             for j in range(8):
                 if j == ind.board[i]:
                     continue
+                
         return melhor
 
     def imprimir_tabuleiro(self, ind):
@@ -64,7 +66,7 @@ class subida:
     def imprimir_aga(self, ind):
         funcao = self.aga(ind)
         print('---------------------------------------')
-        print('O número de individuos que nao se atacam eh: ' + self.aga(ind))
+        print('O numero de individuos que nao se atacam eh: ' + self.aga(ind))
         print('---------------------------------------')
 
     def subida_encosta(self, it_max):
@@ -72,6 +74,8 @@ class subida:
         funcao principal
         """
         self.atual = self.estado_inicial()
+        print('Estado inicial aleatorio: ')
+        self.imprimir_tabuleiro(self.atual)
         it = 1
         vizinho = Individuo()
         while it <= it_max:
