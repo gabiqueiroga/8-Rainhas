@@ -27,9 +27,7 @@ while True:
         case 2:
             print('Você escolheu Subida na Encosta')
             it_max = int(input('Digite o número máximo de iterações: '))
-            a,b = subida.subida_encosta
-            print(a)
-            print(b)
+            subida.subida_encosta
             opcao1 = int(input('Digite 1 para sair ou qualquer coisa para retornar ao menu principal: '))
             match opcao1:
                 case 1:
