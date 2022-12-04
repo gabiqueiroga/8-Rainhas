@@ -28,11 +28,11 @@ class subida:
         j = 1
         for i in range (1,8):
             if ind.board[k] == ind.board[i]:
-                attack = attack + 1
+                attack = attack + 1 #se está na mesma linha se ataca
             if k == i + j:
-                attack = attack + 1
+                attack = attack + 1 #se está na diagonal se ataca
             if k == i - j:
-                attack = attack + 1
+                attack = attack + 1 #se está na diagonal se ataca
             j = j + 1
             k = k + 1
         return attack

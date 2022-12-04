@@ -15,9 +15,6 @@ while True:
             it_max = int(input('Digite o numero maximo de iteracoes: '))
             tam_pop = int(input('Digite o tamanho da populacao: '))
             tx_mut = float(input('Digite o numero da taxa de mutacao: '))
-            r = Individuo()
-            r = Genetico.random_ind
-            print(r)
             opcao1 = int(input('Digite 1 para sair ou qualquer coisa para retornar ao menu principal: '))
             match opcao1:
                 case 1:
