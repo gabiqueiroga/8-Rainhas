@@ -24,17 +24,21 @@ class subida:
         que calcula quantos pares de rainhas estao se atacando
         """
         attack = 0
-        k = 0
-        j = 1
-        for i in range (1,8):
-            if ind.board[k] == ind.board[i]:
-                attack = attack + 1 #se está na mesma linha se ataca
-            if k == i + j:
-                attack = attack + 1 #se está na diagonal se ataca
-            if k == i - j:
-                attack = attack + 1 #se está na diagonal se ataca
-            j = j + 1
-            k = k + 1
+        j = 0
+        for k in range(0,8):
+            for i in range (k+1,8):
+                print(ind.board[k],ind.board[i]+(i-k))
+                # Verifica se existem pares na mesma linha horizontal
+                if ind.board[k] == ind.board[i]:
+                    attack = attack + 1
+                # Verifica se na mesma diagonal inferior
+                if ind.board[k] == ind.board[i]-(i-k):
+                    attack = attack + 1
+                # Verifica se na mesma diagonal superior
+                if ind.board[k] == ind.board[i]+(i-k):
+                    attack = attack + 1
+                j+=1
+        print(j)
         return attack
     
     def melhor_sucessor(self, ind):
@@ -70,9 +74,10 @@ class subida:
         self.atual = self.estado_inicial()
         it = 1
         vizinho = Individuo()
-        while it <= self.it_max:
+        while it <= it_max:
             vizinho = self.melhor_sucessor(self.atual)
             if self.aga(vizinho) <= self.aga(self.atual):
                 self.atual = self.vizinho
+            it = it + 1
         self.imprimir_tabuleiro(self.atual)
         self.imprimir_aga(self.imprimir_aga)

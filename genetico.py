@@ -35,7 +35,7 @@ class Genetico:
             population.append(ind.id)
         self.generation = self.generation + 1
         return population
-
+    
     def fitness(self, individuo):
         """
         funcao fitness que conta quantos pares de rainhas nao estao se atacando
@@ -43,17 +43,21 @@ class Genetico:
         o valor de fit é diminuido em 1
         """
         fit = 28
-        k = 0
-        j = 1
-        for i in range (1,8):
-            if individuo.board[k] == individuo.board[i]:
-                fit = fit - 1
-            if k == i + j:
-                fit = fit - 1
-            if k == i - j:
-                fit = fit - 1
-            j = j + 1
-            k = k + 1
+        j = 0
+        for k in range(0,8):
+            for i in range (k+1,8):
+                print(individuo.board[k],individuo.board[i]+(i-k))
+                # Verifica se existem pares na mesma linha horizontal
+                if individuo.board[k] == individuo.board[i]:
+                    fit = fit - 1
+                # Verifica se na mesma diagonal inferior
+                if individuo.board[k] == individuo.board[i]-(i-k):
+                    fit = fit - 1
+                # Verifica se na mesma diagonal superior
+                if individuo.board[k] == individuo.board[i]+(i-k):
+                    fit = fit - 1
+                j+=1
+        print(j)
         return fit
 
     def crossover(self):
