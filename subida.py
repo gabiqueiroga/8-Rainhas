@@ -51,6 +51,18 @@ class subida:
                     continue
         return melhor
 
+    def imprimir_tabuleiro(self, ind):
+        tabuleiro = self.ind.board
+        print('---------------------------------------')
+        print(tabuleiro)
+        print('---------------------------------------')
+
+    def imprimir_aga(self, ind):
+        funcao = self.aga(ind)
+        print('---------------------------------------')
+        print('O número de individuos que nao se atacam eh: ' + self.aga(ind))
+        print('---------------------------------------')
+
     def subida_encosta(self, it_max):
         """
         funcao principal
@@ -62,4 +74,5 @@ class subida:
             vizinho = self.melhor_sucessor(self.atual)
             if self.aga(vizinho) <= self.aga(self.atual):
                 self.atual = self.vizinho
-        return (self.atual, self.aga(self.atual))
+        self.imprimir_tabuleiro(self.atual)
+        self.imprimir_aga(self.imprimir_aga)
