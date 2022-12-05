@@ -40,9 +40,8 @@ class Genetico:
         j = 0
         for k in range(0,8):
             for i in range (k+1,8):
-                print(board[k],board[i]+(i-k))
                 # Verifica se existem pares na mesma linha horizontal
-                if board[k] == board[i]:
+                if (board[k]) == (board[i]):
                     fit = fit - 1
                 # Verifica se na mesma diagonal inferior
                 if board[k] == board[i]-(i-k):
@@ -141,7 +140,7 @@ class Genetico:
         print('---------------------------------------')
     
     def alg_genetico(self):
-        self.gera_populacao(self.tam_pop)
+        self.gera_populacao()
         while self.generation <= self.it_max and self.calc_fitness(self.melhor_individuo) != 28:
             self.ngeneration = None
             for i in range (self.tam_pop):
